@@ -37,4 +37,3 @@ courses.append(new.capitalize())
 inai['courses'] += courses
 
 print(inai)
-print('Zhamin top')
