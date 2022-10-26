@@ -37,3 +37,4 @@ courses.append(new.capitalize())
 inai['courses'] += courses
 
 print(inai)
+asdgf
