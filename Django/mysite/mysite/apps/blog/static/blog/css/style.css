@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    }
+
+/* Article */
+
+.articles {
+    max-width: 1310px;
+    height: 515px;
+    margin: 0 auto;
+    background: #EDEDED;}
+
+.art li{
+    list-style: none;
+}
+
+.art li a{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    text-decoration: none;
+    color: #8E8CE7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.no_art h3{
+    width: 500px;
+    height: 20px;
+    left: 20px;
+    top: 10px;
+
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 48px;
+}
+
+/* Article */
+
+/* Blog */
+
+header h1{
+    text-align: center;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 70px;
+
+    color: #EDEDED;
+}
+
+header h2{
+    margin-left: 200px;
+    margin-top: 150px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #EDEDED;
+}
+
+.wrapper{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Blog */
+
+/* base */
+
+.header-container{
+    max-width: 1620px;
+    margin: 0 auto;
+    border-radius: 50px 50px 0px 0px;
+    background: #8E8CE7;
+    padding-bottom: 150px;
+    }
+
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+
+nav ul{
+    display: flex;
+}
+
+.nav-items li{
+    list-style: none;
+    margin-right: 40px;
+}
+
+.nav-items li:nth-last-of-type(1){
+    margin: 0;
+}
+
+.nav-items li a{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    text-decoration: none;
+    color: #EDEDED;
+}
+
+body {
+   font-family: sans-serif;
+
+   background: rgba(0, 0, 0, 1);
+   background-image: linear-gradient(243.17deg, rgba(171, 153, 242, 0.491659) 0%, rgba(91, 57, 231, 0.35) 34.25%, rgba(171, 153, 242, 0.664844) 65.9%, rgba(91, 57, 231, 0.35) 99.63%);
+   }
+
+/* base */
+
+
+
+/* detail */
+
+.theart h2{
+    text-align: center;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 70px;
+
+    color: #EDEDED;
+}
+
+.link {
+    display: block;
+    margin-top: 250px;
+    margin-bottom: 545px;
+}
