@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
+from django.utils import timezone
 from .models import Article
 
 
@@ -11,6 +12,16 @@ def start(request):
 def index(request):
     latest_articles_list = Article.objects.order_by('-a_date')[:5]
     return render(request, 'blog/list.html', {'latest_articles_list': latest_articles_list})
+
+
+def adding(request):
+    return render(request, 'blog/adding.html')
+
+
+def add_article(request):
+    new_art = Article(a_title=request.POST['name1'], a_text=request.POST['text1'], a_date=timezone.now())
+    new_art.save()
+    return HttpResponseRedirect( reverse('blog:adding'), {'new_art': new_art})
 
 
 def detail(request, article_id):

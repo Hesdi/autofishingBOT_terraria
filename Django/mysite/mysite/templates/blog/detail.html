@@ -4,39 +4,48 @@
 
 {% block content %}
 <div class="theart">
-    <h2>{{article.a_title}}</h2>
+    <div>
+        <h2>{{article.a_title}}</h2>
+    {%if article.was_published_recently%}
+    <h1>NEW!</h1>{%endif%}
+    </div>
+
+    <h3>{{article.a_date}}</h3>
     <p>{{article.a_text}}</p>
-    <em>{{article.a_date}}</em>
 </div>
 
+<div class="your_com">
+    <form action="{% url 'blog:leave_comment' article.id%}" method="POST">
 
-{%if article.was_published_recently%}
-NEW ARTICLE
-{%endif%}
+        {% csrf_token %}
 
-<hr>
+        <input type="text" class="form" required placeholder="Your name" name="name"><br>
+        <textarea name="text" class="form" required placeholder="Comment's text" cols="50" rows="5"></textarea><br>
+
+        <button type="submit">Leave comment</button>
+    </form>
+</div>
 
 {% if latest_comments_list%}
-    {%for c in latest_comments_list%}
-        <p>
+{%for c in latest_comments_list%}
+<li>
+    <div class="comments">
+        <p class="comm">
             <strong>{{c.auth_name}}</strong>
-            <p>{{c.comm_text}}</p>
         </p>
-    {%endfor%}
+        <p class="zabal">
+            {{c.comm_text}}
+        </p>
+    </div>
+</li>
+{%endfor%}
 {%else%}
-    No comments
+    <div class="comments">
+        <h4>No Comments</h4>
+    </div>
 {%endif%}
 
-<hr>
 
-<form action="{% url 'blog:leave_comment' article.id%}" method="POST">
 
-    {% csrf_token %}
-
-    <input type="text" required placeholder="Your name" name="name"><br>
-    <textarea name="text" required placeholder="Comment's text" cols="30" rows="10"></textarea><br>
-
-    <button type="submit">Leave comment</button>
-</form>
 
 {% endblock %}
