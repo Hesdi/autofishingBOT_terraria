@@ -21,7 +21,7 @@ def adding(request):
 def add_article(request):
     new_art = Article(a_title=request.POST['name1'], a_text=request.POST['text1'], a_date=timezone.now())
     new_art.save()
-    return HttpResponseRedirect( reverse('blog:adding'), {'new_art': new_art})
+    return HttpResponseRedirect(reverse('blog:adding'), {'new_art': new_art})
 
 
 def detail(request, article_id):
@@ -43,4 +43,9 @@ def leave_comment(request, article_id):
 
     a.comment_set.create(auth_name=request.POST['name'], comm_text=request.POST['text'])
 
-    return HttpResponseRedirect( reverse('blog:detail', args= (a.id,)))
+    return HttpResponseRedirect(reverse('blog:detail', args= (a.id,)))
+
+# def add_article(request):
+#     method = request.method
+#     if method == 'POST':
+#         form = forms
